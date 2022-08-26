@@ -4,19 +4,22 @@
 // import images from '../images/logo.jpg';
 import { useState, useEffect } from 'react';
 import getDataApi from '../services/api';
-import api from '../services/api';
+import HtmlList from './HtmlList';
+
+
 
 function App() {
 
     //------------------------------USE STATE----------------------------//
 
-    // const [charactersList, setCharactersList] = useState([]);
+    const [charactersList, setCharactersList] = useState([]);
 
 
 
     //----------------------------------FETCH----------------------------//
     useEffect(() => {
         getDataApi().then((characters) => {
+            setCharactersList(characters);
             console.log(characters);
         })
     }, []);
@@ -38,9 +41,8 @@ function App() {
                     <option></option>
                 </select>
             </form>
-            <ul>
 
-            </ul>
+            <HtmlList charactersList={charactersList} ></HtmlList>
         </div>
     )
 }

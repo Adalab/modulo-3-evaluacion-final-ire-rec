@@ -4,10 +4,10 @@ const getDataApi = () => {
         .then((data) => {
             const characters = data.map(({ name, alternate_names, species, image, house, gender, alive }) => ({
                 name: name,
+                alternate_names: alternate_names,
                 species: species,
                 image: image,
                 house: house,
-                alternate_names: alternate_names,
                 gender: gender,
                 alive: alive,
             }));
