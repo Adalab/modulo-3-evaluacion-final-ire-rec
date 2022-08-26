@@ -1,43 +1,52 @@
 //Ejecutar en la terminal npm run githubpage//
-
+// import { Routes, Route, Link } from 'react-router-dom';
 // import '../styles/App.scss';
 // import images from '../images/logo.jpg';
-// import { useState, useEffect } from 'react';
-import callToApi from '../services/api';
-import { Routes, Route, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import getDataApi from '../services/api';
+import api from '../services/api';
 
-const App = () => {
+function App() {
+
+    //------------------------------USE STATE----------------------------//
+
+    // const [charactersList, setCharactersList] = useState([]);
 
 
 
-  return (
-    <div>
-      <nav>
-        <li> <Link to=""></Link></li>
-      </nav>
-      <h2>Este título aparece siempre</h2>
-      <Routes>
-        <Route path='/contacto' element={
+    //----------------------------------FETCH----------------------------//
+    useEffect(() => {
+        getDataApi().then((characters) => {
+            console.log(characters);
+        })
+    }, []);
 
-          <h2>
-            Este título solo aparece cuando la usuaria entra en la página de
-            contacto
-          </h2>
-        } />
+    return (
+        <div className="App">
+            <h1>Harry Potter</h1>
+            <form>
+                <label>Busca por personaje</label>
+                <input
+                    type="text">
+                </input>
 
-      </Routes>
-      <nav>
-        <ul>
-          <li>
-            <a href='/#/'>Ir al inicio</a>
-          </li>
-          <li>
-            <a href='/#/contacto'>Ir a contacto</a>
-          </li>
-        </ul>
-      </nav>
-    </div >
-  );
-};
+                <label>Busca por personaje</label>
+                <select>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </form>
+            <ul>
 
+            </ul>
+        </div>
+    )
+}
+
+//--------------------------------RENDER---------------------------------//
+// const htmlList = () => {
+//     <li key="characterList">{characters.name} {characters.image} {characters.species} </li>
+// }
 export default App;
