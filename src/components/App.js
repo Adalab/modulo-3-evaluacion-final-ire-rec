@@ -26,6 +26,7 @@ function App() {
 
     return (
         <div className="App">
+
             <h1>Harry Potter</h1>
             <form>
                 <label>Busca por personaje</label>
@@ -47,8 +48,5 @@ function App() {
     )
 }
 
-//--------------------------------RENDER---------------------------------//
-// const htmlList = () => {
-//     <li key="characterList">{characters.name} {characters.image} {characters.species} </li>
-// }
+
 export default App;
