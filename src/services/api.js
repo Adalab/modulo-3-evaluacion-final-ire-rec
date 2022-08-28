@@ -1,8 +1,11 @@
+import { v4 as uuidv4 } from 'uuid';
 const getDataApi = () => {
-    return fetch('http://hp-api.herokuapp.com/api/characters/house/gryffindor')
+
+    const uuid = uuidv4();
+    return fetch('http://hp-api.herokuapp.com/api/characters')
         .then((response) => response.json())
         .then((data) => {
-            const characters = data.map(({ name, alternate_names, species, image, house, gender, alive }) => ({
+            const characters = data.map(({ name, alternate_names, species, image, house, gender, alive, id }) => ({
                 name: name,
                 alternate_names: alternate_names,
                 species: species,
@@ -10,9 +13,20 @@ const getDataApi = () => {
                 house: house,
                 gender: gender,
                 alive: alive,
+                id: uuid,
+
+
             }));
 
             return (characters);
-        })
+
+
+
+        }
+        )
+
+
 }
+
+
 export default getDataApi;
