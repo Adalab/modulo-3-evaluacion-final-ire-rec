@@ -36,21 +36,24 @@ function App() {
     //characterList es mi array, y ahora voy a guardar en un array todas las casas
 
     const getHouses = () => {
-        if ((charactersList.house) !== ('')) {
-            console.log('falta casa')
-        }
+
         const charactersHouses = charactersList.map(charactersList => charactersList.house);
 
 
-        // const oneHouse = charactersHouses
-        //     .filter((house, index) => {
-        //         return charactersHouses.indexOf(house) === index;
-        //     });
-        // oneHouse.splice(4);
+        const oneHouse = charactersHouses
+            //hace que no se me ñada el mismo nombre
+            .filter((house, index) => {
+                return charactersHouses.indexOf(house) === index;
 
 
-        console.log(charactersHouses)
-        return charactersHouses;
+            });
+
+        const deleteEmptyHouse = charactersHouses.filter(house => house !== '');
+
+        const cleanHouses = deleteEmptyHouse.filter((house, index) => deleteEmptyHouse.indexOf(house) === index)
+
+        return cleanHouses;
+
 
 
     }

@@ -1,7 +1,7 @@
 function FilterByHouse(props) {
 
     const handleFilterHouses = (ev) => {
-        props.handleFilterHouses(ev.target.value)
+        props.handleFilterHouses(ev.currentTarget.value)
     }
 
     const renderHouse = () => {
@@ -23,10 +23,9 @@ function FilterByHouse(props) {
             <label htmlFor="houses"></label>
             <select
                 className="houses"
-                name=""
+                name="houses"
                 id=""
                 onChange={handleFilterHouses}
-
 
             >
                 <option className="option" value="">Gryffindor</option>
