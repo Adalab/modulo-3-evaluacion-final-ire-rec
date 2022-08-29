@@ -6,15 +6,13 @@ function FilterByHouse(props) {
 
     const renderHouse = () => {
         return props.houses.map((houses, index) => {
-
             return (
                 <option
                     key={index} className="option"
                     value={houses}
                 >{houses}</option>
             );
-        }
-        )
+        })
     }
 
     return (
@@ -25,10 +23,8 @@ function FilterByHouse(props) {
                 className="houses"
                 name="houses"
                 id=""
-                onChange={handleFilterHouses}
-
-            >
-                <option className="option" value="">Gryffindor</option>
+                onChange={handleFilterHouses} >
+                <option className="option" value="Todos">Todos</option>
                 {renderHouse()}
             </select>
         </div >

@@ -1,15 +1,17 @@
+
 import OneCharacter from "./OneCharacter";
 
 function AllCharacters(props) {
 
 
-    const renderCharactersList = props.charactersList.map((charactersList) => {
+    const renderCharactersList = props.charactersList.map((charactersList, index) => {
 
         return (
-            <OneCharacter charactersList={charactersList}  ></OneCharacter >
+            <OneCharacter charactersList={charactersList} key={index}  ></OneCharacter >
         );
 
     });
+
 
     return (
         <ul className="allCharacters_list"> {renderCharactersList}

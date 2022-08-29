@@ -7,8 +7,7 @@ function Filters(props) {
 
         <form className="form">
             <FilterByHouse houses={props.houses} handleFilterHouses={props.handleFilterHouses} ></FilterByHouse>
-            <FilterByCharacters></FilterByCharacters>
-
+            <FilterByCharacters searchCharacter={props.searchCharacter} handleSearch={props.handleSearch}></FilterByCharacters>
         </form>
 
     );
