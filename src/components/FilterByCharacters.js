@@ -1,7 +1,12 @@
+import '../styles/App.scss';
 function FilterByCharacters(props) {
-    const handleSearch = (ev) => {
-        props.handleSearch(ev.currentTarget.value)
-    }
+
+    const handleSearchName = (ev) => {
+        props.handleSearchCharacter(ev.target.id, ev.target.value);
+
+    };
+
+
     return (
         <div>
             <h4>Busca por personaje</h4>
@@ -10,11 +15,13 @@ function FilterByCharacters(props) {
                 type="text"
                 name="searchCharacter"
                 id="searchCharacter"
-                onChange={handleSearch}
+                key="searchCharacter"
+                onChange={handleSearchName}
                 value={props.searchCharacter}
             >
             </input>
         </div>
     )
 }
+
 export default FilterByCharacters;

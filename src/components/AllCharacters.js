@@ -1,15 +1,13 @@
-
+import '../styles/App.scss';
 import OneCharacter from "./OneCharacter";
 
 function AllCharacters(props) {
-
 
     const renderCharactersList = props.charactersList.map((charactersList, index) => {
 
         return (
             <OneCharacter charactersList={charactersList} key={index}  ></OneCharacter >
         );
-
     });
 
 

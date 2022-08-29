@@ -1,8 +1,11 @@
+import '../styles/App.scss';
 function FilterByHouse(props) {
 
     const handleFilterHouses = (ev) => {
         props.handleFilterHouses(ev.currentTarget.value)
     }
+
+
 
     const renderHouse = () => {
         return props.houses.map((houses, index) => {
