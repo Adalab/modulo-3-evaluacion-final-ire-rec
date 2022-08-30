@@ -35,12 +35,6 @@ function App() {
 
     //-> FILTER FUNCTIONS
 
-
-
-
-
-
-
     const houseFilters = charactersList
         .filter((hou) => {
             if (filterHouses === "all") {

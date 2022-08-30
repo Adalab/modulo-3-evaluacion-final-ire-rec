@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 const getDataApi = () => {
 
-    const uuid = uuidv4();
+
     return fetch('http://hp-api.herokuapp.com/api/characters')
         .then((response) => response.json())
         .then((data) => {
@@ -13,7 +13,7 @@ const getDataApi = () => {
                 house: house,
                 gender: gender,
                 alive: alive,
-                id: uuid,
+                id: uuidv4(),
 
 
             }));
