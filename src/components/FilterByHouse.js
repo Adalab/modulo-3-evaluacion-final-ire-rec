@@ -5,17 +5,18 @@ function FilterByHouse(props) {
 
     return (
         <>
+            <h3 className="character_house">Busca por casa</h3>
             <label
-                class="houses"
-                for="houses">Busca por casa</label>
+                className="houses"
+                htmlFor="houses"></label>
             <select
-                class="houses_select"
+                className="houses_select"
                 name="houses"
                 id="houses"
                 value={props.FilterByHouse}
                 onChange={handleChange}
             >
-                <option value="Gryffindor" selected>Gryffindor</option>
+                <option defaultValue="Gryffindor" >Gryffindor</option>
                 <option value="all">Todos</option>
                 <option value="Slytherin">Slytherin</option>
                 <option value="Hufflepuff">Hufflepuff</option>

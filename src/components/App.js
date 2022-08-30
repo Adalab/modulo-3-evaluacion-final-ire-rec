@@ -22,8 +22,8 @@ function App() {
         setFilterHouses(value);
     }
 
-    const handleSearchCharacter = (ev) => {
-        setSearchCharacter(ev.target.value)
+    const handleFilterCharacter = (value) => {
+        setSearchCharacter(value);
     }
 
     //-> FETCH
@@ -34,16 +34,12 @@ function App() {
     }, []);
 
     //-> FILTER FUNCTIONS
-    const getNames = () => {
-        const charactersNames = charactersList
-            .filter((nameChar) => {
-                return nameChar.name.toLowerCase().includes(searchCharacter.toLowerCase());
-            })
-            .map(charactersList => charactersList.name)
-        console.log(charactersNames);
 
-    }
-    getNames();
+
+
+
+
+
 
     const houseFilters = charactersList
         .filter((hou) => {
@@ -55,7 +51,14 @@ function App() {
         }
         )
 
-    //REPLACE IMAGE
+        .filter((nameChar) => {
+            return nameChar.name.toLowerCase().includes(searchCharacter.toLowerCase());
+        })
+        .map(charactersList => charactersList)
+
+
+
+    //-> REPLACE IMAGE
     const newImage = () => {
         const replaceImages = charactersList.map(charactersList => {
             if (charactersList.image === '') {
@@ -65,7 +68,7 @@ function App() {
     }
     newImage();
 
-    //ROUTES 
+    //-> ROUTES 
 
     const { pathname } = useLocation();
     const dataPath = matchPath("/user/:userId", pathname)
@@ -89,13 +92,15 @@ function App() {
                                     handleFilterHouses={handleFilterHouses}
                                     filterHouses={filterHouses}
 
-                                    getNames={getNames()}
                                     searchCharacter={searchCharacter}
-                                    handleSearchCharacter={handleSearchCharacter}
+                                    handleFilterCharacter={handleFilterCharacter}
                                 >
 
                                 </Filters>
-                                <AllCharacters charactersList={houseFilters} ></AllCharacters>
+                                <AllCharacters
+                                    charactersList={houseFilters}
+
+                                ></AllCharacters>
                             </>
                         }
                     />

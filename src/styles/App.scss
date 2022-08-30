@@ -27,7 +27,7 @@
 }
 .name_charactersList{
     text-decoration-line: none;
-    color: black;
+    color: brown;
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
@@ -35,7 +35,7 @@
 
 .species_charactersList{
     color: gray;
-    font-size: 16px;
+    font-size: 18px;
     text-decoration-line: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -65,7 +65,7 @@ justify-content: flex-start;
     padding: 5px;
     border-radius: 10px;
     margin-top: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:black;
 }
 
@@ -89,5 +89,15 @@ justify-content: flex-start;
 .volver{
     color:darkgoldenrod;
     font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.character_title{
+color: beige;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.character_house{
+    color: beige;  
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

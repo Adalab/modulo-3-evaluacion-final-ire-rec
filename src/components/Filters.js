@@ -2,6 +2,7 @@ import '../styles/App.scss';
 import FilterByCharacters from "./FilterByCharacters";
 import FilterByHouse from "./FilterByHouse";
 
+
 function Filters(props) {
 
     return (
@@ -13,8 +14,9 @@ function Filters(props) {
 
             <FilterByCharacters
                 searchCharacter={props.searchCharacter}
-                handleSearchCharacter={props.handleSearchCharacter}
-                getNames={props.getNames}
+                handleFilterCharacter={props.handleFilterCharacter}
+
+
             ></FilterByCharacters>
         </form>
     );
