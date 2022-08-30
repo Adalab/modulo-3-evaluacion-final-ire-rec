@@ -1,37 +1,28 @@
-import '../styles/App.scss';
 function FilterByHouse(props) {
-
-    const handleFilterHouses = (ev) => {
-        props.handleFilterHouses(ev.currentTarget.value)
-    }
-
-
-
-    const renderHouse = () => {
-        return props.houses.map((houses, index) => {
-            return (
-                <option
-                    key={index} className="option"
-                    value={houses}
-                >{houses}</option>
-            );
-        })
+    const handleChange = (ev) => {
+        props.handleFilterHouses(ev.target.value);
     }
 
     return (
-        <div>
-            <h4>Busca por casa</h4>
-            <label htmlFor="houses"></label>
+        <>
+            <label
+                class="houses"
+                for="houses">Busca por casa</label>
             <select
-                className="houses"
+                class="houses_select"
                 name="houses"
-                id=""
-                onChange={handleFilterHouses} >
-                <option className="option" value="Todos">Todos</option>
-                {renderHouse()}
+                id="houses"
+                value={props.FilterByHouse}
+                onChange={handleChange}
+            >
+                <option value="Gryffindor" selected>Gryffindor</option>
+                <option value="all">Todos</option>
+                <option value="Slytherin">Slytherin</option>
+                <option value="Hufflepuff">Hufflepuff</option>
+                <option value="Hufflepuff">Ravenclaw</option>
             </select>
-        </div >
-    );
+        </>
+    )
 }
 
 

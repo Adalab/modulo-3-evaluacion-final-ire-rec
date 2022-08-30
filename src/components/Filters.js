@@ -5,10 +5,8 @@ import FilterByHouse from "./FilterByHouse";
 function Filters(props) {
 
     return (
-
         <form className="form">
             <FilterByHouse
-                houses={props.houses}
                 handleFilterHouses={props.handleFilterHouses}
                 filterHouses={props.filterHouses}>
             </FilterByHouse>
@@ -19,8 +17,6 @@ function Filters(props) {
                 getNames={props.getNames}
             ></FilterByCharacters>
         </form>
-
     );
-
 }
 export default Filters;

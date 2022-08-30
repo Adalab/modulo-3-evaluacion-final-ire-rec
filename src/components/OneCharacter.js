@@ -1,6 +1,7 @@
 import '../styles/App.scss';
 import { Link } from 'react-router-dom';
 
+
 function OneCharacter(props) {
 
     return (

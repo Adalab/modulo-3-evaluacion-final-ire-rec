@@ -8,29 +8,22 @@ import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 
 
-
-
 function App() {
-
 
     //-> USE STATE FUNCTIONS
 
     const [charactersList, setCharactersList] = useState([]);
-    console.log(charactersList);
-
-    const [filterHouses, setFilterHouses] = useState([]);
-
+    const [filterHouses, setFilterHouses] = useState("all");
     const [searchCharacter, setSearchCharacter] = useState('');
 
 
-    //->HANDLE FUNCTIONS
+    //-> HANDLE FUNCTIONS
     const handleFilterHouses = (value) => {
-        setFilterHouses([...filterHouses, value]);
+        setFilterHouses(value);
     }
 
     const handleSearchCharacter = (ev) => {
-        setSearchCharacter(ev.currentTarget.value, ev.currentTarget.id);
-
+        setSearchCharacter(ev.target.value)
     }
 
     //-> FETCH
@@ -41,7 +34,6 @@ function App() {
     }, []);
 
     //-> FILTER FUNCTIONS
-
     const getNames = () => {
         const charactersNames = charactersList
             .filter((nameChar) => {
@@ -49,50 +41,38 @@ function App() {
             })
             .map(charactersList => charactersList.name)
         console.log(charactersNames);
+
     }
     getNames();
 
+    const houseFilters = charactersList
+        .filter((hou) => {
+            if (filterHouses === "all") {
+                return true;
+            } else {
+                return hou.house === filterHouses;
+            }
+        }
+        )
 
-    const getHouses = () => {
-        const charactersHouses = charactersList.map(charactersList => charactersList.house);
-
-        //hace que no se me añada el mismo nombre al hacer click
-        const oneHouse = charactersHouses
-            .filter((house, index) => {
-                return charactersHouses.indexOf(house) === index;
-            });
-        //sin casas vacías
-        const deleteEmptyHouse = charactersHouses.filter(house => house !== '');
-
-        //sin casas repetidas
-        const cleanHouses = deleteEmptyHouse.filter((house, index) => deleteEmptyHouse.indexOf(house) === index)
-        return cleanHouses;
-    }
-    getHouses();
-
-
-    //OTHER FUNCTIONS
+    //REPLACE IMAGE
     const newImage = () => {
-        const allImages = charactersList.map(charactersList => {
+        const replaceImages = charactersList.map(charactersList => {
             if (charactersList.image === '') {
                 charactersList.image = "https://www.nawpic.com/media/2020/harry-potter-background-nawpic-1.jpg"
             }
-
-        }); return allImages
+        }); return replaceImages
     }
-
     newImage();
 
     //ROUTES 
 
     const { pathname } = useLocation();
-    console.log(pathname);
     const dataPath = matchPath("/user/:userId", pathname)
     //compruebo si la ruta que se está ejecutando coincide con la ruta declarada//
     const userId = dataPath !== null ? dataPath.params.userId : null;
     //con eso guardo el identificador en una variable//
     const userFound = charactersList.find(user => { return user.id === userId });
-
 
 
     return (
@@ -106,7 +86,6 @@ function App() {
                         element={
                             <>
                                 <Filters
-                                    houses={getHouses()}
                                     handleFilterHouses={handleFilterHouses}
                                     filterHouses={filterHouses}
 
@@ -116,7 +95,7 @@ function App() {
                                 >
 
                                 </Filters>
-                                <AllCharacters charactersList={charactersList} ></AllCharacters>
+                                <AllCharacters charactersList={houseFilters} ></AllCharacters>
                             </>
                         }
                     />
@@ -124,12 +103,9 @@ function App() {
                         path="/user/:userId"
                         element={
                             <CharacterDetail user={userFound} />
-
                         }>
-
                     </Route>
                 </Routes>
-
             </main>
         </div>
     )

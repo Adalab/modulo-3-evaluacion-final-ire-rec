@@ -2,7 +2,7 @@ import '../styles/App.scss';
 function FilterByCharacters(props) {
 
     const handleSearchName = (ev) => {
-        props.handleSearchCharacter(ev.target.id, ev.target.value);
+        props.handleSearchCharacter(ev.currentTarget.value);
 
     };
 
@@ -12,6 +12,7 @@ function FilterByCharacters(props) {
             <h4>Busca por personaje</h4>
             <label htmlFor="searchCharacter"></label>
             <input
+                className="searchCharacter"
                 type="text"
                 name="searchCharacter"
                 id="searchCharacter"
