@@ -1,6 +1,7 @@
 import '../styles/App.scss';
 import FilterByCharacters from "./FilterByCharacters";
 import FilterByHouse from "./FilterByHouse";
+import FilterByGender from './FilterByGender';
 
 
 function Filters(props) {
@@ -18,6 +19,12 @@ function Filters(props) {
 
 
             ></FilterByCharacters>
+
+            <FilterByGender
+                handleFilterByGender={props.handleFilterByGender}
+                filterByGender={props.filterByGender}>
+
+            </FilterByGender>
         </form>
     );
 }

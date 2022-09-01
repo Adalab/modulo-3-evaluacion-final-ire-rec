@@ -1,4 +1,4 @@
-//Ejecutar en la terminal npm run githubpage//
+//Ejecutar en la terminal npm run githubpages//
 import { Routes, Route, Link, useLocation, matchPath } from 'react-router-dom';
 import '../styles/App.scss';
 import { useState, useEffect } from 'react';
@@ -15,6 +15,7 @@ function App() {
     const [charactersList, setCharactersList] = useState([]);
     const [filterHouses, setFilterHouses] = useState("all");
     const [searchCharacter, setSearchCharacter] = useState('');
+    const [filterByGender, setFilterByGender] = useState("all");
 
 
     //-> HANDLE FUNCTIONS
@@ -24,6 +25,10 @@ function App() {
 
     const handleFilterCharacter = (value) => {
         setSearchCharacter(value);
+    }
+
+    const handleFilterByGender = (value) => {
+        setFilterByGender(value);
     }
 
     //-> FETCH
@@ -48,7 +53,17 @@ function App() {
         .filter((nameChar) => {
             return nameChar.name.toLowerCase().includes(searchCharacter.toLowerCase());
         })
+
+        .filter((g) => {
+            if (filterByGender === "all") {
+                return true
+            }
+            else {
+                return g.gender === filterByGender
+            }
+        })
         .map(charactersList => charactersList)
+    console.log(charactersList);
 
 
 
@@ -88,6 +103,9 @@ function App() {
 
                                     searchCharacter={searchCharacter}
                                     handleFilterCharacter={handleFilterCharacter}
+
+                                    handleFilterByGender={handleFilterByGender}
+                                    filterByGender={filterByGender}
                                 >
 
                                 </Filters>

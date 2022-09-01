@@ -16,11 +16,11 @@ function FilterByHouse(props) {
                 value={props.FilterByHouse}
                 onChange={handleChange}
             >
-                <option defaultValue="Gryffindor" >Gryffindor</option>
+                <option defaultValue="Gryffindor">Gryffindor</option>
                 <option value="all">Todos</option>
                 <option value="Slytherin">Slytherin</option>
                 <option value="Hufflepuff">Hufflepuff</option>
-                <option value="Hufflepuff">Ravenclaw</option>
+                <option value="Ravenclaw">Ravenclaw</option>
             </select>
         </>
     )
