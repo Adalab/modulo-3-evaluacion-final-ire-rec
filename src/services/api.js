@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 const getDataApi = () => {
 
 
-    return fetch('http://hp-api.herokuapp.com/api/characters')
+    return fetch('https://hp-api.onrender.com/api/characters')
         .then((response) => response.json())
         .then((data) => {
             const characters = data.map(({ name, alternate_names, species, image, house, gender, alive, id }) => ({
