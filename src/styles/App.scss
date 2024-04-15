@@ -1,5 +1,4 @@
 
-
 //OneCharacter
 
 .li_charactersList{
@@ -8,6 +7,7 @@
     text-align: center;
     margin: 50px;
     width: max-content;
+    height: 410px;
     border-style:solid;
     border-color: white;
     border-radius: 30px;   
@@ -19,18 +19,17 @@
 
 .image_charactersList{
     width: 200px;
+    height:290px;
     padding-top: 20px;
     padding-left: 20px;
-    padding-right: 20px;
-    
-    
+    padding-right: 20px; 
 }
+
 .name_charactersList{
     text-decoration-line: none;
-    color: white;
+    color:brown;
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .species_charactersList{
@@ -43,9 +42,8 @@
 //AllCharacter
 .allCharacters_list{
 display: grid;
-grid-template-columns:  auto auto auto;
+grid-template-columns:  auto auto auto auto;
 justify-content: flex-start;
-
 }
 
 //form
@@ -55,8 +53,12 @@ justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     padding: 20px;   
-    background-image: url(../images/backHarryPotter.jpg);
-    background-size: 1500px;
+    background-image: url(../images/harry-potter-hogwarts-i133054.jpg);
+        @media all and (min-width: 768px){
+        background-image: url(../images/backHarryPotter.jpg);
+        background-size: 1500px;
+        }
+    background-size: 500px;
     background-repeat: no-repeat;
 
 }
@@ -117,8 +119,9 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 .li_charactersList_detail{
     background-image: url(../images/backHarryPotter_byn.jpg);
-    background-size: 1500px;
+    background-size: 1400px;
     background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     flex-direction:row;
     justify-content: center;    
