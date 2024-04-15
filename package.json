@@ -1,6 +1,6 @@
 {
   "name": "react-starter-kit",
-  "homepage": "https://ire-rec.github.io/Harry-Potter-Cards/",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

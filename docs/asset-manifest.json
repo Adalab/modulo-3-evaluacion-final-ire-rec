@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/modulo-3-evaluacion-final-ire-rec/static/css/main.e8320437.css",
-    "main.js": "/modulo-3-evaluacion-final-ire-rec/static/js/main.a3e9d387.js",
-    "static/media/backHarryPotter.jpg": "/modulo-3-evaluacion-final-ire-rec/static/media/backHarryPotter.61d124db1df6eb913255.jpg",
-    "static/media/backHarryPotter_byn.jpg": "/modulo-3-evaluacion-final-ire-rec/static/media/backHarryPotter_byn.9a7868ea6d9c2a032663.jpg",
-    "static/media/harry-potter-hogwarts-i133054.jpg": "/modulo-3-evaluacion-final-ire-rec/static/media/harry-potter-hogwarts-i133054.27c5d15088b88ebde8c2.jpg",
-    "static/media/Harry_Potter_Neutral_Title.jpg": "/modulo-3-evaluacion-final-ire-rec/static/media/Harry_Potter_Neutral_Title.0bfb668437ecf706352e.jpg",
-    "index.html": "/modulo-3-evaluacion-final-ire-rec/index.html",
-    "main.e8320437.css.map": "/modulo-3-evaluacion-final-ire-rec/static/css/main.e8320437.css.map",
-    "main.a3e9d387.js.map": "/modulo-3-evaluacion-final-ire-rec/static/js/main.a3e9d387.js.map"
+    "main.css": "./static/css/main.07606249.css",
+    "main.js": "./static/js/main.a3e9d387.js",
+    "static/media/backHarryPotter.jpg": "./static/media/backHarryPotter.61d124db1df6eb913255.jpg",
+    "static/media/backHarryPotter_byn.jpg": "./static/media/backHarryPotter_byn.9a7868ea6d9c2a032663.jpg",
+    "static/media/harry-potter-hogwarts-i133054.jpg": "./static/media/harry-potter-hogwarts-i133054.27c5d15088b88ebde8c2.jpg",
+    "static/media/Harry_Potter_Neutral_Title.jpg": "./static/media/Harry_Potter_Neutral_Title.0bfb668437ecf706352e.jpg",
+    "index.html": "./index.html",
+    "main.07606249.css.map": "./static/css/main.07606249.css.map",
+    "main.a3e9d387.js.map": "./static/js/main.a3e9d387.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8320437.css",
+    "static/css/main.07606249.css",
     "static/js/main.a3e9d387.js"
   ]
 }
